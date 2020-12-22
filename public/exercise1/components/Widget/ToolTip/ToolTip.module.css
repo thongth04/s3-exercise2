@@ -1,0 +1,49 @@
+.help {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 14px;
+  width: 14px;
+  background-color: #6c6c6c;
+  background-image: url("../../../assets/img_ui/tooltip_questionmark.svg");
+  /*background-image: url('../img_ui/help.png');*/
+  background-repeat: no-repeat;
+  border-radius: 7px;
+
+  will-change: background-color;
+  transition: background-color 0.3s;
+}
+.help:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+.tip {
+  position: absolute;
+  right: 14px;
+  top: 34px;
+  /*background-color: #787878;*/
+  /*padding: 15px;*/
+  /*border-radius: 3px;*/
+  width: 50%;
+
+  background-color: #000000;
+  border: 1px solid #5d5d5d;
+  font-size: 14px;
+  color: #ccc;
+  text-align: left;
+  line-height: 16px;
+  padding: 8px 10px;
+
+  z-index: 99;
+
+  visibility: hidden;
+  opacity: 0;
+
+  will-change: visibility, opacity;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+.help:hover + .tip {
+  visibility: visible;
+  opacity: 1;
+  z-index: 100;
+}

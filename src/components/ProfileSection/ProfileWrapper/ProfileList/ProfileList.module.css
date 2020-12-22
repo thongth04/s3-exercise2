@@ -1,0 +1,9 @@
+.profile_list {
+  max-height: 189px;
+  position: absolute;
+  width: 100%;
+}
+.scrollable {
+  overflow-y: auto;
+  overflow-x: hidden;
+}

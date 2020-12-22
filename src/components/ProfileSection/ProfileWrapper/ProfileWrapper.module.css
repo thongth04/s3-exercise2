@@ -1,0 +1,21 @@
+.drawer_select {
+  border: 1px solid #5d5d5d;
+  width: 200px;
+  max-height: 220px;
+  height: 220px;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+.profile_list {
+  max-height: 189px;
+  position: absolute;
+  width: 100%;
+}
+.scrollable {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.flex {
+  display: flex;
+}

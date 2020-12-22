@@ -1,0 +1,69 @@
+.toolbar {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  height: 29px;
+  background-color: #222;
+  border-top: 1px solid #707070;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.icon {
+  height: 28px;
+  width: 28px;
+  max-width: 28px;
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+
+  will-change: background-color;
+  transition: background-color 0.2s;
+}
+.toolbar > .icon {
+  will-change: opacity;
+  transition: opacity 0.3s linear;
+}
+.toolbar > .icon.add {
+  background-image: url("../../../../assets/images/icon_plus.svg");
+}
+.toolbar > .icon.edit {
+  background-image: url("../../../../assets/images/icon_edit.svg");
+  display: none;
+}
+.toolbar > .icon.delete {
+  background-image: url("../../../../assets/images/icon_delete.svg");
+  display: none;
+}
+.toolbar > .icon.edit.show,
+.toolbar > .icon.delete.show {
+  display: block;
+}
+
+.toolbar > .icon.up {
+  background-image: url("../../../../assets/images/icon_arrow_up.svg");
+  position: absolute;
+  left: 0;
+}
+.toolbar > .icon.down {
+  background-image: url("../../../../assets/images/icon_arrow_down.svg");
+  position: absolute;
+  left: 30px;
+}
+.toolbar > .icon:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+.toolbar > .icon:active {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.toolbar > .icon.disabled:hover,
+.toolbar > .icon.disabled:active,
+.toolbar > .icon.disabled {
+  background-color: transparent;
+  cursor: default;
+  opacity: 0.3;
+}
+.flex {
+  display: flex;
+}

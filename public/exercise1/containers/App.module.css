@@ -1,0 +1,25 @@
+.main_container {
+  min-width: 1024px;
+  min-height: 730px;
+  height: 100%;
+  width: 100%;
+  background-color: #222;
+  position: relative;
+}
+
+.body_wrapper {
+  max-width: 1920px;
+  min-height: 2048px;
+  position: fixed;
+  width: 100%;
+  min-width: 1024px;
+  top: 48px;
+  bottom: 30px;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.scrollable {
+  overflow-y: auto;
+  overflow-x: hidden;
+}

@@ -1,0 +1,58 @@
+.profile_del {
+  /* position: absolute; */
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  background-color: #111;
+  border: 1px solid #c8323c;
+  border-radius: 3px;
+  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  left: 127px;
+  top: 205px;
+  display: flex !important;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 3;
+  left: calc(50% - 150px);
+  top: 52px;
+
+  will-change: visibility, opacity;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+
+.flex {
+  flex: 0 0 auto;
+  position: absolute;
+}
+
+.profile_del .title {
+  font-weight: bold;
+  color: #c83200;
+  margin-bottom: 10px;
+}
+.profile_del .body_text {
+  text-transform: none;
+  margin-bottom: 10px;
+}
+.profile_del.show {
+  visibility: visible;
+  opacity: 1;
+}
+
+.alert div.thx_btn {
+  height: 27px;
+  width: auto;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 17px;
+  background-color: #c8323c;
+  padding: 4px 0;
+  min-width: 90px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.t_center {
+  text-align: center;
+}

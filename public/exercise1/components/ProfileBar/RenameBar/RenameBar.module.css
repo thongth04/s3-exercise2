@@ -1,0 +1,25 @@
+.profile_edit {
+  position: absolute;
+  z-index: 100;
+
+  font-family: "Roboto", sans-serif;
+  position: absolute;
+  /*display: none;*/
+  /*width: calc(100% - 30px);*/
+  /*margin-left: 30px;*/
+  border: 1px solid #44d62c;
+  box-sizing: border-box;
+  background-color: #111 !important;
+  padding: 5px 6px;
+  font-size: 14px;
+  line-height: 17px;
+  color: #ccc;
+  height: 27px;
+  width: 230px;
+  margin-left: -10px;
+  display: none;
+}
+
+.show {
+  display: block;
+}

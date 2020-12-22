@@ -1,0 +1,77 @@
+.profile_item {
+  max-height: 30px;
+  height: 30px;
+  border: none;
+  color: #ccc;
+  text-transform: capitalize;
+  padding: 5px 10px 5px 36px;
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+
+  will-change: color, background-color;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.profile_item:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.profile_item:active {
+  color: #44d62c;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.profile_item.active {
+  color: #44d62c;
+}
+
+.profile_item::before {
+  content: " ";
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  left: 10px;
+  background-position: center;
+}
+.profile_item.default::before {
+  background-image: url("../../../../assets/images/icon_profiles_default.svg");
+}
+.profile_item.game::before {
+  background-image: url("../../../../assets/images/icon_profiles_game.svg");
+}
+.profile_item.movie::before {
+  background-image: url("../../../../assets/images/icon_profiles_movie.svg");
+}
+.profile_item.music::before {
+  background-image: url("../../../../assets/images/icon_profiles_music.svg");
+}
+.profile_item.custom::before {
+  background-image: url("../../../../assets/images/icon_profiles_custom.svg");
+}
+.profile_item.default:active::before,
+.profile_item.default.active::before {
+  background-image: url("../../../../assets//images/profile_sel_default.svg");
+}
+.profile_item.game:active::before,
+.profile_item.game.active::before {
+  background-image: url("../../../../assets/images/profile_sel_game.svg");
+}
+.profile_item.movie:active::before,
+.profile_item.movie.active::before {
+  background-image: url("../../../../assets/images/profile_sel_movie.svg");
+}
+.profile_item.music:active::before,
+.profile_item.music.active::before {
+  background-image: url("../../../../assets/images/profile_sel_music.svg");
+}
+.profile_item.custom:active::before,
+.profile_item.custom.active::before {
+  background-image: url("../../../../assets/images/profile_sel_custom.svg");
+}

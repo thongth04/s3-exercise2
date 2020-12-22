@@ -1,0 +1,131 @@
+/* dropdown */
+.dropdown_area {
+  width: 230px;
+  position: relative;
+  margin: 0 10px;
+  text-align: left;
+}
+
+.s3_dropdown {
+  z-index: 99;
+  border-bottom: 1px solid #515151;
+  border: 1px solid #515151;
+  border-color: #515151;
+  background-color: transparent;
+  width: 100%;
+  max-height: 27px;
+  text-transform: capitalize;
+  padding: 4px 5px;
+  font-size: 14px;
+  color: #ccc;
+  line-height: 17px;
+  position: relative;
+  height: 27px;
+
+  will-change: opacity, border-color;
+  transition: opacity 0.3s, border-color 0.2s;
+}
+
+.s3_dropdown.disabled {
+  opacity: 0.3;
+}
+.s3_dropdown.disabled:hover {
+  cursor: default;
+  border: 1px solid #515151;
+}
+
+.expand {
+  border: 1px solid #44d62c;
+}
+
+.expand_icon_up {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-image: url("../../../assets/img_ui/icon_expand.svg");
+  width: 29px;
+  height: 25px;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(0deg);
+
+  will-change: transform;
+  transition: transform 0.3s;
+}
+.expand_icon_down {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-image: url("../../../assets/img_ui/icon_expand.svg");
+  width: 29px;
+  height: 25px;
+  background-size: 10px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transform: rotate(180deg);
+
+  will-change: transform;
+  transition: transform 0.3s;
+}
+.s3_dropdown:hover {
+  cursor: pointer;
+  border-color: #44d62c;
+}
+.placeholder {
+  color: #666;
+}
+.s3_options {
+  z-index: 100;
+  position: absolute;
+  left: 0;
+  max-height: 0px;
+  max-width: 100%;
+  flex-direction: column;
+  border: 1px solid #515151;
+  border-bottom: none;
+  border: none;
+  /*border-top: none;*/
+  background-color: #000;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-top: 1px;
+  height: 0;
+  width: 100%;
+
+  will-change: height, max-height, border-bottom;
+  transition: height 0.2s, max-height 0.2s, border-bottom 0.1s;
+}
+.expand_opt {
+  height: auto;
+  border: 1px solid #515151;
+  max-height: 180px;
+}
+
+.selected {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  position: absolute;
+  max-width: calc(100% - 24px);
+}
+
+.inactive {
+  /*opacity: 0.3;*/
+  color: rgba(204, 204, 204, 0.3);
+}
+.inactive:hover {
+  /*opacity: 0.3;*/
+  cursor: default;
+}
+
+.color_opts.hide {
+  display: none;
+}
+.color_opts {
+  display: block;
+}
+
+.flex {
+  display: flex;
+}

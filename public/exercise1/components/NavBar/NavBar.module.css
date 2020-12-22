@@ -1,0 +1,89 @@
+.nav_tabs {
+  width: 100%;
+  background-color: #44d62c;
+  position: relative;
+}
+
+.nav {
+  text-decoration: none;
+  height: 100%;
+  color: #000;
+  flex: 0 0 auto;
+  background-repeat: no-repeat;
+  padding: 16px 20px;
+  text-align: center;
+  font-family: RazerF5;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 21px;
+  line-height: 16px;
+  opacity: 0.3;
+
+  will-change: opacity, background-color, color;
+  transition: opacity 0.3s, background-color 0.3s, color, 0.1s;
+}
+
+.active {
+  opacity: 1;
+}
+.arrow {
+  opacity: 1;
+  background-position: center;
+  width: 40px;
+  height: 48px;
+  max-width: 40px;
+  padding: 0;
+  background-size: 9px 18px;
+}
+
+.nav:hover {
+  background-color: #3dc128;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.nav:active {
+  background-color: #3dc128;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.disabled {
+  opacity: 0.3;
+}
+
+.disabled:hover {
+  opacity: 0.3;
+  cursor: default;
+  background-color: transparent;
+}
+
+.back {
+  background-image: url("../../assets/img_ui/nav_back_arrow.svg");
+}
+
+.forward {
+  background-image: url("../../assets/img_ui/nav_fwd_arrow.svg");
+}
+
+.user {
+  position: absolute;
+  right: 0;
+  flex: 0 0 auto;
+}
+
+.avatar {
+  margin: 8px 15px;
+  height: 32px;
+  width: 32px;
+  background-color: #ddd;
+  border-radius: 16px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex > div {
+  flex: auto;
+}

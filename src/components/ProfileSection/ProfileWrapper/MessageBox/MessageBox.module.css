@@ -1,0 +1,78 @@
+.thx_btn {
+  text-transform: uppercase;
+  border-radius: 3px;
+  background-color: #44d62c;
+  color: #000;
+  display: inline-block;
+  width: auto;
+  padding: 0.5rem 1.5rem;
+  user-select: none;
+  text-align: center;
+
+  will-change: opacity;
+  transition: opacity 0.3s;
+}
+.thx_btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+.thx_btn:active {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.thx_btn.disabled,
+.thx_btn.disabled:hover,
+.thx_btn.disabled:hover {
+  opacity: 0.3;
+  cursor: default;
+}
+.profile_del {
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 300px;
+  background-color: #111;
+  border: 1px solid #c8323c;
+  border-radius: 3px;
+  box-shadow: 0px 6px 10px 0px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  left: 127px;
+  top: 205px;
+  display: flex !important;
+  visibility: hidden;
+  opacity: 0;
+
+  will-change: visibility, opacity;
+  transition: visibility 0s, opacity 0.3s linear;
+}
+.profile_del.show {
+  visibility: visible;
+  opacity: 1;
+}
+.alert .title {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #c8323c;
+  text-align: center;
+  line-height: 17px;
+}
+.alert .body_text {
+  margin: 10px;
+}
+.alert div.thx_btn {
+  height: 27px;
+  width: auto;
+  font-size: 12px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 17px;
+  background-color: #c8323c;
+  padding: 4px 0;
+  min-width: 90px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.t_center {
+  text-align: center;
+}
