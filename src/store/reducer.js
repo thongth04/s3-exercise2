@@ -57,14 +57,13 @@ const profileReducer = (state = profileInitialState, action) => {
         if (profile.id === state.activeProfile.id) deletedId = index;
         return profile.id !== state.activeProfile.id;
       });
-      const newActiveProfile = { ...state.profiles[deletedId - 1] };
 
       updateLocalStorage(profiles);
 
       return {
         ...state,
         profiles: profiles,
-        activeProfile: { ...newActiveProfile },
+        activeProfile: { ...state.profiles[deletedId - 1] },
       };
     }
 
@@ -142,20 +141,3 @@ const rootReducer = combineReducers({
 const store = createStore(rootReducer);
 
 export { store, profileReducer, toolbarReducer };
-
-// const profileInitialState = {
-//   profiles: [
-//     { id: 1, name: "Default", type: "default", editable: false },
-//     { id: 2, name: "Game", type: "game", editable: false },
-//     { id: 3, name: "Movie", type: "movie", editable: false },
-//     { id: 4, name: "Music", type: "music", editable: false },
-//     { id: 5, name: "Custom 1", type: "custom", editable: true },
-//     {
-//       id: 6,
-//       name: "Demo Long Text Demo Long Text Demo",
-//       type: "custom",
-//       editable: true,
-//     },
-//   ],
-//   activeProfile: { id: 1, name: "Default", type: "default", editable: false },
-// };

@@ -1,5 +1,4 @@
 export const SET_DATA = "SET_DATA";
-export const SET_LATESTID = "SET_LATESTID";
 export const TOGGLE_ACTIVE = "TOGGLE_ACTIVE";
 export const TOGGLE_EDIT = "TOGGLE_EDIT";
 export const TOGGLE_DELETE = "TOGGLE_DELETE";
@@ -12,10 +11,6 @@ export const CLICK_OUTSIDE_EDIT = "CLICK_OUTSIDE_EDIT";
 
 export const setData = (data) => {
   return { type: SET_DATA, data: data };
-};
-
-export const setLatestedId = () => {
-  return { type: SET_LATESTID };
 };
 
 export const toggleActive = (id) => {
