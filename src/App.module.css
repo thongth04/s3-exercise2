@@ -1,0 +1,19 @@
+.main_container {
+  width: 1000px;
+  height: 688px;
+}
+
+.thx_wrapper {
+  width: 100%;
+  flex-direction: row;
+  min-height: 640px;
+  max-height: 640px;
+}
+
+/* flex */
+div.flex {
+  display: flex;
+}
+div.flex > div {
+  flex: auto;
+}

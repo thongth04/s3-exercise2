@@ -1,21 +1,54 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addProfile,
+  moveProfile,
+  toggleDelete,
+  toggleEdit,
+} from "../../../../store/actions";
 import styles from "./ToolBar.module.css";
 
-const ToolBar = (props) => {
+const ToolBar = () => {
+  const activeProfile = useSelector((state) => state.data.activeProfile);
+  const profileList = useSelector((state) => state.data.profiles);
+
+  const listLength = profileList.length;
+
+  const checkOnTop = () => {
+    const currentIndex = profileList.findIndex(
+      (profile) => profile.id === activeProfile.id
+    );
+    return currentIndex === 0 ? true : false;
+  };
+
+  const checkAtBottom = () => {
+    const currentIndex = profileList.findIndex(
+      (profile) => profile.id === activeProfile.id
+    );
+    return currentIndex === listLength - 1 ? true : false;
+  };
+
+  const dispatch = useDispatch();
   const add = () => {
-    props.add();
+    dispatch(addProfile());
   };
+
   const edit = () => {
-    props.edit();
+    dispatch(toggleEdit());
   };
+
   const del = () => {
-    props.del();
+    dispatch(toggleDelete());
   };
   const down = () => {
-    props.down();
+    if (checkAtBottom()) {
+      console.log("is At Bottom");
+    } else dispatch(moveProfile(1));
   };
   const up = () => {
-    props.up();
+    if (checkOnTop()) {
+      console.log("is On Top");
+    } else dispatch(moveProfile(-1));
   };
   return (
     <div className={styles.toolbar + " " + styles.flex}>
@@ -26,7 +59,7 @@ const ToolBar = (props) => {
           " " +
           styles.edit +
           " " +
-          (props.editable ? styles.show : "")
+          (activeProfile.editable ? styles.show : "")
         }
         onClick={edit}
       />
@@ -36,7 +69,7 @@ const ToolBar = (props) => {
           " " +
           styles.delete +
           " " +
-          (props.editable ? styles.show : "")
+          (activeProfile.editable ? styles.show : "")
         }
         onClick={del}
       />
@@ -44,7 +77,7 @@ const ToolBar = (props) => {
         className={[
           styles.icon,
           styles.down,
-          props.isAtBottom ? styles.disabled : "",
+          checkAtBottom() ? styles.disabled : "",
         ].join(" ")}
         onClick={down}
       />
@@ -52,7 +85,7 @@ const ToolBar = (props) => {
         className={[
           styles.icon,
           styles.up,
-          props.isOnTop ? styles.disabled : "",
+          checkOnTop() ? styles.disabled : "",
         ].join(" ")}
         onClick={up}
       />

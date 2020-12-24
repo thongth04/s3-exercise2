@@ -1,9 +1,13 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styles from "./Profile.module.css";
+import { toggleActive } from "../../../../store/actions";
 
 const Profile = (props) => {
+  const dipatch = useDispatch();
   const handleClick = () => {
-    props.clicked(props.id);
+    console.log(props.id);
+    dipatch(toggleActive(props.id));
   };
   return (
     <div

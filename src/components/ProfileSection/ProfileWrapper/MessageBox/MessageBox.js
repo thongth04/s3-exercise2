@@ -1,14 +1,27 @@
 import React, { useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { HandleClickOutside } from "../../../../helpers/utils";
+import {
+  CLICK_OUTSIDE_DEL,
+  delProfile,
+  toggleDelete,
+} from "../../../../store/actions";
 import styles from "./MessageBox.module.css";
 
-const MessageBox = (props) => {
-  const ref = useRef();
+const MessageBox = () => {
+  const activeProfile = useSelector((state) => state.data.activeProfile);
+  const msgBoxState = useSelector((state) => state.toolbar.msgBoxState);
 
-  HandleClickOutside(ref, () => props.clickOutside());
+  const dispatch = useDispatch();
+  const handleClickOutside = () => {
+    dispatch({ type: CLICK_OUTSIDE_DEL });
+  };
+  const ref = useRef();
+  HandleClickOutside(ref, () => handleClickOutside());
 
   const deleteProfile = () => {
-    props.deleteProfile();
+    dispatch(delProfile());
+    dispatch(toggleDelete());
   };
 
   return (
@@ -17,13 +30,13 @@ const MessageBox = (props) => {
         styles.profile_del,
         styles.alert,
         styles.flex,
-        props.isShow ? styles.show : "",
+        msgBoxState ? styles.show : "",
       ].join(" ")}
       ref={ref}
     >
       <div className={styles.title}>delete eq</div>
       <div className={[styles.body_text, styles.t_center].join(" ")}>
-        {props.profileName}
+        {activeProfile.name}
       </div>
       <div className={styles.thx_btn} onClick={deleteProfile}>
         delete
